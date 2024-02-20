@@ -1,0 +1,45 @@
+1. Download The Dataset "Space_Mission.csv"
+2. Load The data Into PowerBI as csv file
+3. Transform The Data
+	1. Check For The Data Types
+	2. Check For The Null Values (If exists remove them)
+4. Make Date Table using New_Table For The Date Hierachie.
+		Date Table = ADDCOLUMNS(CALENDAR( MIN('Space Missions'[Date]), MAX('Space Missions'[Date])),
+						"Year", YEAR([Date]), "Month", FORMAT([Date], "mmm"), "Month Number", MONTH([Date]))
+5. Make A separate table using "Enter Data" with the Name "All Measures".
+6. Create First Measure "Total Missions" (To COUNT the unique missions throughout the year)
+		Total Missions = COUNT('Space Missions'[Mission])
+7. Use "Line Chart" To See The Mission Trend of the year.
+	x-axis = year, y-axis = Total Missions, Legend=Mission Status
+8. Most Successful Missions By the Companies (Only Successful). Create A Measure "Successful Missions".
+		Successful Missions = CALCULATE(COUNT('Space Missions'[Mission]), 'Space Missions'[Mission] = "Success")
+9. Use "Bar Chart" To See The Successful Missions By the Companies.
+	x-axis = Successful Missions, y-axis = Companies
+10. Use "Bar Chart" To See The Missions By the Rocket.
+	x-axis = Total Missions, y-axis = Rocket, format the bar by conditions rocket is "Active" or "Not Active"
+11. New Measure "Total Price"
+		Total Price = SUM('Space Missions'[Price])
+12. Use "Scatter Plot" 
+	Value = Location, X_Axis = Total Missions, Y_Axis = Total Price, Legen = Mission Status, Size = Sccessful Missions
+13. Use "Donut Chart"
+	Legend = Mission Status, Values = Total Missions
+14. Now Add The "KPIs" by using "Card(New)"
+	1. Failed Missions (Measures), Comma Separated
+	2. Partial Failure (Measures), Comma Separated
+	3. Prelaunch Failure (Measures), Comma Separated
+	4. Successful Missions (Measures), Comma Separated
+	5. Total Missions (Measures), Comma Separated
+	6. Total Price (Measures), Comma Separated, $ Sign
+
+Reporting And Design Dashboard:
+color Codes
+	BG- #1F2326
+	shapes- #272A2F
+	
+	Green- #50C878
+	Red- #AD343E
+	Orange- #E66C37
+	Off White- #DDDBCB
+
+	Slicer Pane- #222A2F
+	
