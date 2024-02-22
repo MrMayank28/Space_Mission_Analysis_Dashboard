@@ -69,12 +69,7 @@ All space missions from 1957 to August 2022, including details on:
 - Comparison of failure rates between companies and rocket types.
 - Cost implications of mission failures.
 
-### 12. Forecasting and Predictive Analysis:
-- Predictive models for estimating the success likelihood of future missions.
-- Forecasting launch frequency and costs.
-- Predictive maintenance analysis for rockets.
-
-### 13. Interactive Elements:
+### 12. Interactive Elements:
 - Filters for users to select specific time ranges, companies, rockets, etc.
 - Drill-down functionality for detailed analysis.
 - Interactive maps and charts for a more engaging experience.
